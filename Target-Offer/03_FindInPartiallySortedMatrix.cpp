@@ -1,15 +1,12 @@
-//
 // Created by renduo on 19-11-12.
-//
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
 bool Find(int target, vector<vector<int>> array) {
-    if(array.empty()){
+    if(array.empty())
         return false;
-    }
     int rows = int(array.size());
     int cols = int(array[0].size());
     int i = 0, j = cols-1;  // start with top right

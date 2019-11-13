@@ -1,6 +1,4 @@
-//
 // Created by renduo on 19-11-12.
-//
 #include <iostream>
 #include <vector>
 
