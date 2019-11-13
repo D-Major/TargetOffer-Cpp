@@ -1,2 +1,3 @@
-# TargetOffer-Cpp
-Test Code for TargetOffer
+# TargetOffer-LeetCode
+Test Code for TargetOffer and LeetCode
+Using C++11
