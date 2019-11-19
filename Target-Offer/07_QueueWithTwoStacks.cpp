@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <stack>
+#include <queue>
 
 using namespace std;
 
@@ -31,4 +32,52 @@ public:
 private:
     stack<int> stack1;
     stack<int> stack2;
+};
+
+/** Stack with two queues */
+class Queue_Stack{
+public:
+    void push(int node){
+        if(queue1.empty() && queue2.empty())
+            queue1.push(node);
+        else if(!queue1.empty() && queue2.empty())
+            queue1.push(node);
+        else if(queue1.empty() && !queue2.empty())
+            queue2.push(node);
+        else
+            return;
+    }
+
+    int pop(){
+        int p = 0;
+        if(queue2.empty()){
+            while(queue1.size() > 1){
+                queue2.push(queue1.front());
+                queue1.pop();
+            }
+            p = queue1.front();
+            queue1.pop();
+        }else if(queue1.empty()){
+            while(queue2.size() > 1){
+                queue1.push(queue2.front());
+                queue2.pop();
+            }
+            p = queue2.front();
+            queue2.pop();
+        }
+        return p;
+    }
+
+    int top(){
+        if(!queue1.empty() && queue2.empty())
+            return queue1.back();
+        else if(queue1.empty() && !queue2.empty())
+            return queue2.back();
+        else if(queue1.empty() && queue2.empty())
+            return 0;
+    }
+
+private:
+    queue<int> queue1;
+    queue<int> queue2;
 };
