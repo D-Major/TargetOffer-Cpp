@@ -9,15 +9,15 @@ void PrintListReversingly_Iterative(LinkList L){
     if(!L->next)
         return;
     LinkList p=L->next;
-    stack<LinkList> Nodes;
+    stack<LinkList> s;
     while(p){
-        Nodes.push(p);
+        s.push(p);
         p = p->next;
     }
-    while(!Nodes.empty()){
-        p = Nodes.top();
+    while(!s.empty()){
+        p = s.top();
         cout << p->data << " ";
-        Nodes.pop();
+        s.pop();
     }
 }
 
