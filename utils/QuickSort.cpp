@@ -7,39 +7,42 @@
 using namespace std;
 
 void QuickSort(vector<int>& array, int left, int right) {
-    if(left >= right)
+    if(left < 0 || right >= array.size())
+        return;
+    if(left >= right)   // 递归边界条件
         return;
     int pivot = array[left];
     int i = left, j = right;
     while(i < j){
-        while(array[j] >= pivot && i < j)
+        while(array[j] >= pivot && i < j)   // 基准数选左边的则要从右面的j开始移动
             j--;
         while(array[i] <= pivot && i < j)
             i++;
         if(i < j)
             swap(array[i], array[j]);
     }
-    array[left] = array[i];
-    array[i] = pivot;
-    QuickSort(array, left, i - 1);//递归左边
-    QuickSort(array, i + 1, right);//递归右边
+    swap(array[left], array[i]);
+    QuickSort(array, left, i - 1);      //递归左边
+    QuickSort(array, i + 1, right);     //递归右边
 }
 
-//vector<int> QuickSort(vector<int>& array, int low, int high){
-//    if(array.size() < 2)
-//        return array;
-////    srand(time(0));
-//    int pivot = array[random(0, array.size())];
-//    vector<int> less, greater;
-//    for(int i = 0; i < array.size(); i++) {
-//        if (array[i] <= pivot)
-//            less.push_back(array[i]);
-//        else
-//            greater.push_back(array[i]);
-//    }
-////    vector<int> v1 = QuickSort(less);
-////    vector<int> v2 = QuickSort(greater);
-////    v1.insert(v1.end(), v2.begin(), v2.end());
-//
-//    return QuickSort(less) + QuickSort(greater);
-//}
+// 从大到小排序
+void QuickSortReverse(vector<int>& array, int left, int right) {
+    if(left < 0 || right >= array.size())
+        return;
+    if(left >= right)   // 递归边界条件
+        return;
+    int pivot = array[left];
+    int i = left, j = right;
+    while(i < j){
+        while(array[j] <= pivot && i < j)   // 基准数选左边的则要从右面的j开始移动
+            j--;
+        while(array[i] >= pivot && i < j)   // 从大到小排序只需要修改>号
+            i++;
+        if(i < j)
+            swap(array[i], array[j]);
+    }
+    swap(array[left], array[i]);
+    QuickSort(array, left, i - 1);      //递归左边
+    QuickSort(array, i + 1, right);     //递归右边
+}

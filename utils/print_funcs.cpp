@@ -13,10 +13,10 @@ struct Interval {
 
 void print_vector(vector<int> myVector) {
     vector<int>::iterator it = myVector.begin();
-    cout << "[";
+//    cout << "[";
     for (; it != myVector.end(); ++it)
-        cout << *(it) << ", ";
-    cout << "]";
+        cout << *(it) << " ";
+//    cout << "]";
 }
 
 void print_matrix(vector<vector<int>> matrix) {
