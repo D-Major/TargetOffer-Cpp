@@ -5,7 +5,7 @@
 #include <algorithm>
 #include "utils/print_funcs.cpp"
 #include "utils/Link_List.cpp"
-#include "Target-Offer/10_NumberOf1.cpp"
+#include "Target-Offer/11_Power.cpp"
 
 using namespace std;
 
