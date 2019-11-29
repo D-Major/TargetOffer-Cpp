@@ -5,7 +5,7 @@
 #include <algorithm>
 #include "utils/print_funcs.cpp"
 #include "utils/Link_List.cpp"
-#include "Target-Offer/11_Power.cpp"
+#include "Target-Offer/10_NumberOf1.cpp"
 
 using namespace std;
 
@@ -17,6 +17,8 @@ int main(){
             {5, 6, 7, 8},
             {9, 10, 11, 12}
     };
+
+    cout << BinaryXOR(-1, INT32_MIN) << endl;
 
     return 0;
 }
