@@ -50,6 +50,6 @@ bool NthPowerOf2(int n){
 
 int BinaryXOR(int m, int n){
     /* 输入两个整数m和n, 计算需要改变m的二进制中的多少位才能得到n */
-    int a = m ^ n;
-    return NumberOf1(a);
+    int xor_res = m ^ n;
+    return NumberOf1(xor_res);
 }

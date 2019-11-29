@@ -5,7 +5,7 @@
 #include <algorithm>
 #include "utils/print_funcs.cpp"
 #include "utils/Link_List.cpp"
-#include "Target-Offer/10_NumberOf1.cpp"
+#include "Target-Offer/11_Power.cpp"
 
 using namespace std;
 
@@ -18,7 +18,8 @@ int main(){
             {9, 10, 11, 12}
     };
 
-    cout << BinaryXOR(-1, INT32_MIN) << endl;
+    cout << Power(-2, 5) << endl;
+    cout << g_InvalidInput;
 
     return 0;
 }
