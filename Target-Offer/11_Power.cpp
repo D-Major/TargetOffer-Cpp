@@ -24,13 +24,13 @@ double Power_Iterative(double base, unsigned int absExponent){
 
 double Power_Recursive(double base, unsigned int absExponent){
     // 快速幂算法, 复杂度O(logn)
-    if(absExponent == 0)
+    if (absExponent == 0)   // 只是排除异常输入, 指数最低除到1, 不会到0
         return 1;
-    if(absExponent == 1)
+    if (absExponent == 1)
         return base;
-    double result = Power_Recursive(base, absExponent >> 1);
-    result *= result;
-    if(absExponent & 0x1 == 1)
+    double result = Power_Recursive(base, absExponent >> 1);    // 右移一位相当于除以2
+    result *= result;   // 最底层是base的平方
+    if (absExponent & 0x1 == 1)     // 判断指数是否是奇数
         result *= base;
     return result;
 }

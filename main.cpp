@@ -5,7 +5,7 @@
 #include <algorithm>
 #include "utils/print_funcs.cpp"
 #include "utils/Link_List.cpp"
-#include "Target-Offer/11_Power.cpp"
+#include "Target-Offer/12_Print1ToMax.cpp"
 
 using namespace std;
 
@@ -18,8 +18,7 @@ int main(){
             {9, 10, 11, 12}
     };
 
-    cout << Power(-2, 5) << endl;
-    cout << g_InvalidInput;
+    Print1ToMax(2);
 
     return 0;
 }
