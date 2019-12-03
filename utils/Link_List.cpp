@@ -69,7 +69,7 @@ void CreateListHead(LinkList *L, int n)
     }
 }
 
-void CreateList(LinkList *L, int n, bool random) {
+void CreateList(LinkList *L, int n, bool random=false) {
     InitList(L);
     if(random)
         CreateListHead(L, n);

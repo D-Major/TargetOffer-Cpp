@@ -6,6 +6,7 @@
 #include "utils/print_funcs.cpp"
 #include "utils/Link_List.cpp"
 #include "Target-Offer/12_Print1ToMax.cpp"
+#include "Target-Offer/13_DeleteNodeInO(1).cpp"
 
 using namespace std;
 
@@ -18,7 +19,14 @@ int main(){
             {9, 10, 11, 12}
     };
 
-    Print1ToMax(2);
+//    Print1ToMax(2);
 
+    LinkList L;
+    InitList(&L);
+    CreateList(&L, 10);
+    LinkList deleted_node = L->next->next->next;
+//    printf("%d", deleted_node->data);
+    DeleteNode(&L, deleted_node);
+    ListTraverse(L);
     return 0;
 }
