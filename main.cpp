@@ -23,8 +23,8 @@ int main(){
 
     LinkList L;
     InitList(&L);
-    CreateList(&L, 10);
-    LinkList deleted_node = L->next->next->next;
+    CreateList(&L, 3);
+    LinkList deleted_node = L->next->next;
 //    printf("%d", deleted_node->data);
     DeleteNode(&L, deleted_node);
     ListTraverse(L);
