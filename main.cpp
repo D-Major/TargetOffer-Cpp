@@ -6,13 +6,13 @@
 #include "utils/print_funcs.cpp"
 #include "utils/Link_List.cpp"
 #include "Target-Offer/12_Print1ToMax.cpp"
-#include "Target-Offer/13_DeleteNodeInO(1).cpp"
+#include "Target-Offer/14_ReorderArray.cpp"
 
 using namespace std;
 
 int main(){
-    vector<int> test_vec = {4,7,9,6,1,2,5,6,3,0,-1,11};
-    vector<int> test_vec_2 = {1,2,3,4,5};
+    vector<int> test_vec = {4,7,9,6,8,1,3,2,5,6,10,8,-1,11};
+    vector<int> test_vec_2 = {-4,-3,-2,-1,1,2,3,4,5,6,7};
     vector<vector<int>> test_matrix = {
             {1, 2, 3, 4},
             {5, 6, 7, 8},
@@ -20,13 +20,8 @@ int main(){
     };
 
 //    Print1ToMax(2);
+    ReorderArray_BubbleSort(test_vec_2);
+    print_vector(test_vec_2);
 
-    LinkList L;
-    InitList(&L);
-    CreateList(&L, 3);
-    LinkList deleted_node = L->next->next;
-//    printf("%d", deleted_node->data);
-    DeleteNode(&L, deleted_node);
-    ListTraverse(L);
     return 0;
 }
