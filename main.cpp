@@ -6,7 +6,7 @@
 #include "utils/print_funcs.cpp"
 #include "utils/Link_List.cpp"
 #include "Target-Offer/12_Print1ToMax.cpp"
-#include "Target-Offer/14_ReorderArray.cpp"
+#include "Target-Offer/15_FindKthToTail.cpp"
 
 using namespace std;
 
@@ -20,8 +20,9 @@ int main(){
     };
 
 //    Print1ToMax(2);
-    ReorderArray_BubbleSort(test_vec_2);
-    print_vector(test_vec_2);
+    ListNode* L;
+    CreateList(&L, 10, true);
+    cout << FindKthToTail(L, 3)->val << endl;
 
     return 0;
 }

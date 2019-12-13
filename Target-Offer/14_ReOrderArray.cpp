@@ -27,10 +27,10 @@ void ReorderArray_DoublePointer(vector<int> &array) {
 }
 
 void ReorderArray_BubbleSort(vector<int> &array) {
-    // 将相邻的奇偶逐个交换, 保证奇数在前且相对位置不变
+    // 将相邻的奇偶逐个交换, 保证奇数在前且奇数偶数各自的相对位置不变(稳定)
     // 复杂度O(n^2)(冒泡排序), 好处是不需要辅助空间
     for (int i = 0; i < array.size(); i++) {
-        for (int j = array.size() - 1; j > i; j--) {
+        for (int j = array.size() - 1; j > i; j--) { // j从后往前逐个交换位置, 最终确保i的位置是奇数
             if (!isEven(array[j]) && isEven(array[j-1])) // 前偶后奇交换
                 swap(array[j], array[j-1]);
         }
