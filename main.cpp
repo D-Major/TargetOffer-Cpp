@@ -21,8 +21,8 @@ int main(){
 
 //    Print1ToMax(2);
     ListNode* L;
-    CreateList(&L, 10, true);
-    cout << FindKthToTail(L, 3)->val << endl;
+    CreateList(&L, 9, false);
+    cout << FindMiddleNode(L)->val << endl;
 
     return 0;
 }
