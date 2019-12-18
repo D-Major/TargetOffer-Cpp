@@ -79,3 +79,13 @@ void CreateList(ListNode* *L, int n, bool random=false) {
     }
     ListTraverse(*L);
 }
+
+void MakeCircular(ListNode* L)
+{
+    ListNode* p=L->next;
+    while(p->next)
+    {
+        p=p->next;
+    }
+    p->next = L;
+}

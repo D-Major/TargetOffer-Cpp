@@ -31,11 +31,31 @@ ListNode* FindMiddleNode(ListNode* pListHead){
         return NULL;
     auto pAhead = pListHead;
     auto pBehind = pListHead;
-    while (pAhead != NULL)
+    while (pAhead->next != NULL)
     {
-        if (pAhead->next->next)
+        if (pAhead->next->next)     // 偶数最后一位走两步
             pAhead = pAhead->next->next;
+        else if(pAhead->next)       // 奇数最后一位走一步
+            pAhead = pAhead->next;
         pBehind = pBehind->next;
     }
     return pBehind;
+}
+
+bool IsCircleList(ListNode* pListHead){
+    if (!pListHead)
+        return NULL;
+    auto pAhead = pListHead;
+    auto pBehind = pListHead;
+    while (pAhead->next)
+    {
+        if (pAhead->next->next)     // 偶数最后一位走两步
+            pAhead = pAhead->next->next;
+        else if(pAhead->next)       // 奇数最后一位走一步
+            pAhead = pAhead->next;
+        pBehind = pBehind->next;
+        if ((pAhead == pBehind) && (pListHead->next->next)) // 排除只有一个节点的情况
+            return true;
+    }
+    return false;
 }

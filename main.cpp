@@ -21,8 +21,9 @@ int main(){
 
 //    Print1ToMax(2);
     ListNode* L;
-    CreateList(&L, 9, false);
-    cout << FindMiddleNode(L)->val << endl;
+    CreateList(&L, 1, false);
+    MakeCircular(L);
+    cout << IsCircleList(L) << endl;
 
     return 0;
 }
