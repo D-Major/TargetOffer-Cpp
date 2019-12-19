@@ -3,10 +3,10 @@
 #include <stack>
 #include <unordered_map>
 #include <algorithm>
-#include "utils/print_funcs.cpp"
+#include "utils/Print_Funcs.cpp"
 #include "utils/Link_List.cpp"
 #include "Target-Offer/12_Print1ToMax.cpp"
-#include "Target-Offer/15_FindKthToTail.cpp"
+#include "Target-Offer/16_ReverseList.cpp"
 
 using namespace std;
 
@@ -21,9 +21,10 @@ int main(){
 
 //    Print1ToMax(2);
     ListNode* L;
-    CreateList(&L, 1, false);
-    MakeCircular(L);
-    cout << IsCircleList(L) << endl;
+    CreateList(&L, 10, false);
+    ListNode* ReverseHead = ReverseList(L);
+    cout << ReverseHead->val << endl;
+    ListTraverse(ReverseHead);
 
     return 0;
 }

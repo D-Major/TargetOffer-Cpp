@@ -43,7 +43,7 @@ bool ListInsert(ListNode* L,int i,ElemType e)
 
 bool ListTraverse(ListNode* L)
 {
-    ListNode* p=L->next;
+    ListNode* p=L;//->next;
     while(p)
     {
         cout << p->val << " ";
