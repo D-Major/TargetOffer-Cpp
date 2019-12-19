@@ -6,7 +6,7 @@
 #include "utils/Print_Funcs.cpp"
 #include "utils/Link_List.cpp"
 #include "Target-Offer/12_Print1ToMax.cpp"
-#include "Target-Offer/16_ReverseList.cpp"
+#include "Target-Offer/17_MergeSortedLists.cpp"
 
 using namespace std;
 
@@ -20,11 +20,12 @@ int main(){
     };
 
 //    Print1ToMax(2);
-    ListNode* L;
-    CreateList(&L, 10, false);
-    ListNode* ReverseHead = ReverseList(L);
-    cout << ReverseHead->val << endl;
-    ListTraverse(ReverseHead);
+    ListNode* L1;
+    ListNode* L2;
+    CreateList(&L1, 1, 6, true);
+    CreateList(&L2, 1, 7, true);
+    ListNode* MergedList = Merge(L1->next, L2->next);
+    ListTraverse(MergedList);
 
     return 0;
 }

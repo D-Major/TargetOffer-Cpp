@@ -1,6 +1,7 @@
 // Created by renduo on 19-11-14.
 #include <iostream>
 #include <vector>
+#include <zconf.h>
 
 using namespace std;
 typedef int ElemType;/* ElemType类型根据实际情况而定，这里假设为int */
@@ -69,13 +70,35 @@ void CreateListHead(ListNode* *L, int n)
     }
 }
 
-void CreateList(ListNode* *L, int n, bool random=false) {
-    InitList(&(*L));
+void CreateListTail(ListNode* *L, int n)
+{
+    ListNode* p;
+    ListNode* r = *L;                            /* r为指向尾部的结点 */
+    srand(time(0));
+    for (int i=0; i<n; i++)
+    {
+        p = (ListNode*)malloc(sizeof(ListNode*)); /*  每次都要生成新结点 */
+        p->val = rand()%n + i*n;
+        r->next=p;                        /* 将表尾终端结点的指针指向新结点 */
+        r = p;                            /* 将当前的新结点定义为表尾终端结点 */
+    }
+    r->next = NULL;                       /* 表示当前链表结束 */
+}
+
+void CreateList(ListNode* *L, int begin=1, int end=10, bool random=false) {
+    InitList(L);
     if(random)
-        CreateListHead(L, n);
-    else {
-        for (int j = 1; j <= n; j++)
-            ListInsert(*L, j, j);
+        CreateListTail(L, end - begin + 1);
+    else
+    {
+        ListNode* p;
+        for (int i = end; i >= begin; i--)
+        {
+            p = (ListNode*)malloc(sizeof(ListNode)); /*  生成新结点 */
+            p->val = i;
+            p->next = (*L)->next;
+            (*L)->next = p;
+        }
     }
     ListTraverse(*L);
 }
