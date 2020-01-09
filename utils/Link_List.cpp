@@ -85,14 +85,14 @@ void CreateListTail(ListNode* *L, int n)
     r->next = NULL;                       /* 表示当前链表结束 */
 }
 
-void CreateList(ListNode* *L, int begin=1, int end=10, bool random=false) {
+void CreateList(ListNode* *L, int num=10, bool random=true) {
     InitList(L);
     if(random)
-        CreateListTail(L, end - begin + 1);
+        CreateListTail(L, num);
     else
     {
         ListNode* p;
-        for (int i = end; i >= begin; i--)
+        for (int i = num; i >= 1; i--)
         {
             p = (ListNode*)malloc(sizeof(ListNode)); /*  生成新结点 */
             p->val = i;

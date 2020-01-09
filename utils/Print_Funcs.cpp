@@ -12,6 +12,8 @@ struct Interval {
 };
 
 void print_vector(vector<int> myVector) {
+    if (myVector.empty())
+        return;
     vector<int>::iterator it = myVector.begin();
 //    cout << "[";
     for (; it != myVector.end(); ++it)
@@ -20,6 +22,8 @@ void print_vector(vector<int> myVector) {
 }
 
 void print_matrix(vector<vector<int>> matrix) {
+    if (matrix.empty())
+        return;
     for (auto row : matrix) {
         cout << "[";
         for (auto elem : row) {

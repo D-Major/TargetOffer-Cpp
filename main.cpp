@@ -5,27 +5,31 @@
 #include <algorithm>
 #include "utils/Print_Funcs.cpp"
 #include "utils/Link_List.cpp"
+#include "utils/Tree_Node.cpp"
 #include "Target-Offer/12_Print1ToMax.cpp"
-#include "Target-Offer/17_MergeSortedLists.cpp"
+#include "Target-Offer/20_PrintMatrixClockwisely.cpp"
 
 using namespace std;
 
 int main(){
     vector<int> test_vec = {4,7,9,6,8,1,3,2,5,6,10,8,-1,11};
-    vector<int> test_vec_2 = {-4,-3,-2,-1,1,2,3,4,5,6,7};
     vector<vector<int>> test_matrix = {
             {1, 2, 3, 4},
             {5, 6, 7, 8},
             {9, 10, 11, 12}
     };
+    /* 构造一个链表 */
+//    ListNode* L1;
+//    CreateList(&L1, 10, true);
+    /* 构造一棵树 */
+//    vector<int> pre_order = {1,2,4,8,9,5,10,3,6,7};
+//    vector<int> in_order = {8,4,9,2,10,5,1,6,3,7};
+//    TreeNode* pRoot = ReConstructBinaryTree(pre_order, in_order);
 
+    /* ========题目代码======== */
 //    Print1ToMax(2);
-    ListNode* L1;
-    ListNode* L2;
-    CreateList(&L1, 1, 6, true);
-    CreateList(&L2, 1, 7, true);
-    ListNode* MergedList = Merge(L1->next, L2->next);
-    ListTraverse(MergedList);
+    vector<int> res = PrintMatrixClockwisely(test_matrix);
+    print_vector(res);
 
     return 0;
 }
