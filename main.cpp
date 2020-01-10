@@ -7,7 +7,7 @@
 #include "utils/Link_List.cpp"
 #include "utils/Tree_Node.cpp"
 #include "Target-Offer/12_Print1ToMax.cpp"
-#include "Target-Offer/20_PrintMatrixClockwisely.cpp"
+#include "Target-Offer/18_HasSubTree.cpp"
 
 using namespace std;
 
@@ -22,14 +22,17 @@ int main(){
 //    ListNode* L1;
 //    CreateList(&L1, 10, true);
     /* 构造一棵树 */
-//    vector<int> pre_order = {1,2,4,8,9,5,10,3,6,7};
-//    vector<int> in_order = {8,4,9,2,10,5,1,6,3,7};
-//    TreeNode* pRoot = ReConstructBinaryTree(pre_order, in_order);
+    vector<int> pre_order = {1,2,4,8,9,5,10,3,6,7};
+    vector<int> in_order = {8,4,9,2,10,5,1,6,3,7};
+    TreeNode* pRoot = ReConstructBinaryTree(pre_order, in_order);
+
+    vector<int> pre_order_2 = {2,4,8,9};
+    vector<int> in_order_2 = {8,4,9,2};
+    TreeNode* pRoot2 = ReConstructBinaryTree(pre_order_2, in_order_2);
 
     /* ========题目代码======== */
 //    Print1ToMax(2);
-    vector<int> res = PrintMatrixClockwisely(test_matrix);
-    print_vector(res);
+    cout << HasSubTree(pRoot, pRoot2);
 
     return 0;
 }
