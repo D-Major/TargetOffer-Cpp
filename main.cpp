@@ -7,7 +7,7 @@
 #include "utils/Link_List.cpp"
 #include "utils/Tree_Node.cpp"
 #include "Target-Offer/12_Print1ToMax.cpp"
-#include "Target-Offer/18_HasSubTree.cpp"
+#include "Target-Offer/21_StackWithMin.cpp"
 
 using namespace std;
 
@@ -32,7 +32,14 @@ int main(){
 
     /* ========题目代码======== */
 //    Print1ToMax(2);
-    cout << HasSubTree(pRoot, pRoot2);
+    StackWithMin* s = new StackWithMin();
+    s->push(4);
+    s->push(3);
+    s->push(1);
+    s->push(5);
+    s->pop();
+    s->pop();
+    s->push(0);
 
     return 0;
 }

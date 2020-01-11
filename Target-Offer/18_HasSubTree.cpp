@@ -15,13 +15,13 @@ bool DoesTree1HaveTree2(TreeNode* pRoot1, TreeNode* pRoot2) {
             DoesTree1HaveTree2(pRoot1->right, pRoot2->right);
 }
 
-bool HasSubTree(TreeNode* pRoot1, TreeNode* pRoot2) {
+bool HasSubtree(TreeNode *pRoot1, TreeNode *pRoot2) {
     if (!pRoot1 || !pRoot2)
         return false;
     if (pRoot1->val == pRoot2->val) {
         if (DoesTree1HaveTree2(pRoot1, pRoot2))
             return true;
     }
-    return HasSubTree(pRoot1->left, pRoot2) ||
-            HasSubTree(pRoot1->right, pRoot2);
+    return HasSubtree(pRoot1->left, pRoot2) ||
+            HasSubtree(pRoot1->right, pRoot2);
 }
