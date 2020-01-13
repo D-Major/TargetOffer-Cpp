@@ -7,6 +7,7 @@
 #include "utils/Link_List.cpp"
 #include "utils/Tree_Node.cpp"
 #include "Target-Offer/12_Print1ToMax.cpp"
+#include "Target-Offer/22_IsPopOrder.cpp"
 #include "Target-Offer/21_StackWithMin.cpp"
 
 using namespace std;
@@ -25,11 +26,6 @@ int main(){
     vector<int> pre_order = {1,2,4,8,9,5,10,3,6,7};
     vector<int> in_order = {8,4,9,2,10,5,1,6,3,7};
     TreeNode* pRoot = ReConstructBinaryTree(pre_order, in_order);
-
-    vector<int> pre_order_2 = {2,4,8,9};
-    vector<int> in_order_2 = {8,4,9,2};
-    TreeNode* pRoot2 = ReConstructBinaryTree(pre_order_2, in_order_2);
-
     /* ========题目代码======== */
 //    Print1ToMax(2);
     StackWithMin* s = new StackWithMin();
@@ -40,6 +36,11 @@ int main(){
     s->pop();
     s->pop();
     s->push(0);
+
+    vector<int> push_vec = {1,2,3,4,5};
+    vector<int> pop_vec = {4,3,5,1,2};
+    vector<int> pop_vec2 = {4,5,3,2,1};
+    cout << IsPopOrder(push_vec, pop_vec2);
 
     return 0;
 }
