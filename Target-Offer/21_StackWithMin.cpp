@@ -5,17 +5,21 @@
 
 using namespace std;
 
+template <typename T>
 class StackWithMin{
 public :
-    void push(int value);
+    StackWithMin() = default;
+    virtual ~StackWithMin() = default;
+    void push(const T& value);
     void pop();
-    int min();
+    const T& min() const;
 private:
-    stack<int> m_data;
-    stack<int> m_min;
+    std::stack<T> m_data;
+    std::stack<T> m_min;
 };
 
-void StackWithMin::push(int v){
+template <typename T>
+void StackWithMin<T>::push(const T& v){
     /*  这里利用了栈每次只能操作栈顶一个元素的特性,
     * m_min记录了每一个步骤下当前m_data栈的最小元素值,
     * 从而保证弹出栈顶元素后还能找到上一个状态的最小元素值 */
@@ -26,15 +30,17 @@ void StackWithMin::push(int v){
         m_min.push(m_min.top());
 }
 
-void StackWithMin::pop(){
+template <typename T>
+void StackWithMin<T>::pop(){
     if (m_data.empty() && m_min.empty())
         return;
     m_data.pop();
     m_min.pop();
 }
 
-int StackWithMin::min(){
+template <typename T>
+const T& StackWithMin<T>::min() const{
     if (m_data.empty() && m_min.empty())
-        return NULL;
+        return nullptr;
     return m_min.top();
 }

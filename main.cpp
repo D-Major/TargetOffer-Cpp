@@ -3,12 +3,11 @@
 #include <stack>
 #include <unordered_map>
 #include <algorithm>
-#include "utils/Print_Funcs.cpp"
-#include "utils/Link_List.cpp"
-#include "utils/Tree_Node.cpp"
+#include "utils/Print_Funcs.h"
+#include "utils/Link_List.h"
+#include "utils/Tree_Node.h"
 #include "Target-Offer/12_Print1ToMax.cpp"
-#include "Target-Offer/22_IsPopOrder.cpp"
-#include "Target-Offer/21_StackWithMin.cpp"
+#include "Target-Offer/25_FindPath.cpp"
 
 using namespace std;
 
@@ -28,19 +27,7 @@ int main(){
     TreeNode* pRoot = ReConstructBinaryTree(pre_order, in_order);
     /* ========题目代码======== */
 //    Print1ToMax(2);
-    StackWithMin* s = new StackWithMin();
-    s->push(4);
-    s->push(3);
-    s->push(1);
-    s->push(5);
-    s->pop();
-    s->pop();
-    s->push(0);
-
-    vector<int> push_vec = {1,2,3,4,5};
-    vector<int> pop_vec = {4,3,5,1,2};
-    vector<int> pop_vec2 = {4,5,3,2,1};
-    cout << IsPopOrder(push_vec, pop_vec2);
+    print(FindPath(pRoot, 16));
 
     return 0;
 }
