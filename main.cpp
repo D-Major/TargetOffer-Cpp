@@ -7,7 +7,7 @@
 #include "utils/Link_List.h"
 #include "utils/Tree_Node.h"
 #include "Target-Offer/12_Print1ToMax.cpp"
-#include "Target-Offer/25_FindPath.cpp"
+#include "Target-Offer/28_StringPermutation.cpp"
 
 using namespace std;
 
@@ -22,12 +22,14 @@ int main(){
 //    ListNode* L1;
 //    CreateList(&L1, 10, true);
     /* 构造一棵树 */
-    vector<int> pre_order = {1,2,4,8,9,5,10,3,6,7};
-    vector<int> in_order = {8,4,9,2,10,5,1,6,3,7};
-    TreeNode* pRoot = ReConstructBinaryTree(pre_order, in_order);
+//    vector<int> pre_order = {1,2,4,8,9,5,10,3,6,7};
+//    vector<int> in_order = {8,4,9,2,10,5,1,6,3,7};
+//    TreeNode* pRoot = ReConstructBinaryTree(pre_order, in_order);
     /* ========题目代码======== */
 //    Print1ToMax(2);
-    print(FindPath(pRoot, 16));
+    string s = "abc";
+    vector<string> res = Permutation(s);
+    print(res);
 
     return 0;
 }

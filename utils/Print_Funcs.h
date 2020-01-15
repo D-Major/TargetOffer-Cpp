@@ -11,7 +11,8 @@ struct Interval {
     Interval(int s, int e) : start(s), end(e) {}
 };
 
-void print(vector<int> myVector) {
+template <typename T>
+void print(vector<T> myVector) {
     if (myVector.empty())
         return;
     cout << "[";
@@ -21,7 +22,8 @@ void print(vector<int> myVector) {
     cout << "]";
 }
 
-void print(vector<vector<int>> matrix) {
+template <typename T>
+void print(vector<vector<T>> matrix) {
     if (matrix.empty())
         return;
     cout << "[";
