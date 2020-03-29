@@ -41,6 +41,6 @@ void StackWithMin<T>::pop(){
 template <typename T>
 const T& StackWithMin<T>::min() const{
     if (m_data.empty() && m_min.empty())
-        return nullptr;
+        return NULL;
     return m_min.top();
 }

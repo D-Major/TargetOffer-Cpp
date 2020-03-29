@@ -4,5 +4,7 @@ project(TargetOffer-LeetCode)
 set(CMAKE_CXX_STANDARD 11)
 
 add_executable(TargetOffer-LeetCode
-                main.cpp
-                )
+#        CppSrcCode/TestSTL.cpp
+#        CppSrcCode/MemoryManage.cpp
+#         main.cpp
+        FibonacciStr.cpp)

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <stack>
+#include <list>
 #include <unordered_map>
 #include <algorithm>
 #include "utils/Print_Funcs.h"
@@ -8,6 +9,8 @@
 #include "utils/Tree_Node.h"
 #include "Target-Offer/12_Print1ToMax.cpp"
 #include "Target-Offer/28_StringPermutation.cpp"
+#include "Target-Offer/30_KLeastNumbers.cpp"
+#include "Target-Offer/09_Fibonacci.cpp"
 
 using namespace std;
 
@@ -27,9 +30,12 @@ int main(){
 //    TreeNode* pRoot = ReConstructBinaryTree(pre_order, in_order);
     /* ========题目代码======== */
 //    Print1ToMax(2);
-    string s = "abc";
-    vector<string> res = Permutation(s);
-    print(res);
+//    string s = "abc";
+//    vector<string> res = Permutation(s);
+//    print(res);
+//    print(GetLeastNumbers_Solution(test_vec, 6));
+    Fibonacci_Str(6, "abc", "af");
+
 
     return 0;
 }
