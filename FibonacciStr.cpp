@@ -1,4 +1,3 @@
-// Created by D_Major on 2020/3/29.
 #include <iostream>
 #include <cstring>
 
@@ -14,26 +13,31 @@ int* Char_Count(char *s){
         i++;
         len--;
     }
-
     return res;
 }
 
 int* Fibonacci_Str(int n, char *str1, char *str2){
     /* f(n)=f(n-1)+f(n-2) */
+    int* res;
     if(n == 0)
         return nullptr;
-    if(n == 1)
+    if(n == 1) {
         return Char_Count(str1);
-    if(n == 2)
+    }
+    if(n == 2) {
         return Char_Count(str2);
-    char* one = str1;
-    char* two = str2;
-    char* fib = {};
+    }
+    char one[512];
+    strcpy(one,str1);
+    char two[512];
+    strcpy(two,str2);
+    char fib[512] = "";
 
     while(n > 2){
-        fib = strcat(one,two);
-        one = two;
-        two = fib;
+        strcpy(fib, one);
+        strcat(fib,two);
+        strcpy(one,two);
+        strcpy(two,fib);
         n--;
     }
     return Char_Count(fib);
@@ -52,11 +56,11 @@ bool IsLower(const char *s){
 }
 
 int main(){
-    int n=6;
-    char s1[10]="abc";
-    char s2[10]="af";
-//    cin >> n;
-//    cin >> s1 >> s2;
+    int n;
+    char s1[512];
+    char s2[512];
+    cin >> n;
+    cin >> s1 >> s2;
     if(n<=0 || n>=40)
         return 0;
     int len_s1 = strlen(s1);

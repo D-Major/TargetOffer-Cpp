@@ -7,4 +7,6 @@ add_executable(TargetOffer-LeetCode
 #        CppSrcCode/TestSTL.cpp
 #        CppSrcCode/MemoryManage.cpp
 #         main.cpp
-        FibonacciStr.cpp)
+        FibonacciStr.cpp
+#        Game.cpp
+        )
